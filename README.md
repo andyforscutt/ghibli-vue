@@ -3,7 +3,7 @@
 ## Vue Challenge No. 1
 
 ```
-I am setting my self site build challenges to learn Vue.js. Here is the challenge:
+I am setting myself site build challenges to learn Vue.js. Here is the challenge:
 ```
 
 ## Studio Ghibli API
@@ -23,7 +23,7 @@ https://ghibliapi.herokuapp.com/#
 
 #### Repo
 
-github.com/andyforscutt/ghibli-vue
+https://github.com/andyforscutt/ghibli-vue
 
 #### Deployed Site
 
