@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Ghibli API Test</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <img src="logo.png" width="350px" height="168px" />
+
+        <div class="m-3" v-cloak v-if="films.length > 0 && showSummary">
+          <p>Showing {{numFilms}} items</p>
+        </div>
+
+        <div class="card" v-cloak>
+          <h1>{{filmTitle}}</h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <script>
+      //API SOURCE: https://ghibliapi.herokuapp.com/films
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          films: [],
+          showSummary: true,
+          filmTitle: ""
+        },
+        computed: {
+          numFilms: function() {
+            return this.films.length;
+          }
+        },
+        created: function() {
+          this.fetchFilms(); //runs after reactive properties and methods are set up
+        },
+        methods: {
+          fetchFilms: function() {
+            var apiKey = null; //"qy6iWKlcHaQcgB2m2LjV0fQrx2cjgxtybcrsJpf2";
+            var url =
+              "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe";
+            axios.get(url).then(function(res) {
+              //vm.films = res.data.near_earth_objects.slice(0, 20);
+              vm.filmTitle = res.data.title;
+            });
+          },
+          remove: function(index) {
+            this.films.splice(index, 1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
