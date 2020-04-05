@@ -1,10 +1,12 @@
 # ghibli-vue
 
-##Vue Challenge No. 1
+## Vue Challenge No. 1
 
+```
 I am setting my self site build challenges to learn Vue.js. Here is the challenge:
+```
 
-Studio Ghibli API
+## Studio Ghibli API
 
 - Create as Vue project with Vue CLI
 - Install Axios as npm package
@@ -15,16 +17,17 @@ Studio Ghibli API
 - Have a live count of films displayed (computed)
 - Add a film component file
 
-API Source
+#### API Source
+
 https://ghibliapi.herokuapp.com/#
 
-Repo
+#### Repo
+
 github.com/andyforscutt/ghibli-vue
 
-Deployed Site
-https://ghibli-vue.netlify.com/
+#### Deployed Site
 
-<a href="https://ghibli-vue.netlify.com/" target="_blank">https://ghibli-vue.netlify.com/</a>
+https://ghibli-vue.netlify.com/
 
 ## Project setup
 
